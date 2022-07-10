@@ -1,5 +1,4 @@
-// Create module for gameBoard and displayController
-// Create factory function for players
+
 
 // gameBoard = {
 //     row1 : [],
@@ -13,9 +12,22 @@
 
 
 const gameBoard = (() => {
-    const board = [];
+    const board = ['O','O','O','X','X','O','O','X','X'];
     return {board};
 })()
+
+const board = (x) => {
+    const select = document.querySelector(`#slot${x + 1}`);
+    select.innerText = gameBoard.board[x];
+}
+
+
+// ***
+// const board = (move) => {
+//     return gameBoard.board[move];
+//     // return gameBoard.board[similar gameover function to get mark]
+// }
+
 
 // Factory function that creates players
 const Player = (name, mark) => {
@@ -32,6 +44,11 @@ const playerTwo = Player('Ace', 'O');
 function gameOver(player) {
     console.log(player.getName() + " wins!");
 }
+
+// ***
+// function gameMove(player) {
+//     return player.getMark();
+// }
 
 const gameFlow = (() => {
     const p1Move = () => console.log("Player one move!");
