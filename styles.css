@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    width: 300px;
+    height: 300px;
+    /* border: 3px solid grey; */
+}
+
+#row1 {
+    /* border: 2px solid black; */
+    display: flex;
+    height: 96px;
+}
+
+#slot1 {
+    border: 2px solid black;
+    border-top: 0;
+    border-left: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot2 {
+    border: 2px solid black;
+    border-top: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot3 {
+    border: 2px solid black;
+    border-top: 0;
+    border-right: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#row2 {
+    /* border: 2px solid red; */
+    display: flex;
+    height: 96px;
+}
+
+#slot4 {
+    border: 2px solid black;
+    border-left: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot5 {
+    border: 2px solid black;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot6 {
+    border: 2px solid black;
+    border-right: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#row3 {
+    /* border: 2px solid blue; */
+    display: flex;
+    height: 96px;
+}
+
+#slot7 {
+    border: 2px solid black;
+    border-bottom: 0;
+    border-left: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot8 {
+    border: 2px solid black;
+    border-bottom: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
+
+#slot9 {
+    border: 2px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 500%;
+}
