@@ -153,8 +153,8 @@ const Player = (name, mark) => {
 }
 
 // Players
-const playerOne = Player('Rocket', 'X');
-const playerTwo = Player('Ace', 'O');
+const playerOne = Player(prompt('Player One\'s Name?', 'Rocket'), 'X');
+const playerTwo = Player(prompt('Player Two\'s Name?', 'Ace'), 'O');
 
 function gameMove(player) {
     return player.getMark();
@@ -172,7 +172,7 @@ const gameFlow = () => {
         }};
 
     const nextTurn = () => {
-        console.log(turn);
+        // console.log(turn);
         turn++
     }
 
@@ -181,9 +181,11 @@ const gameFlow = () => {
 
 const move = gameFlow();
 
+const winner = document.querySelector('p');
 
 function gameOver(player) {
     console.log(player.getName() + " wins!");
+    winner.innerText = (player.getName() + " wins!")
 }
 
 const playerWin = () => {
@@ -214,7 +216,7 @@ const playerWin = () => {
         else if ((board[0] === 'O') && (board[1] === 'O') && (board[2] === 'O')) {
             return gameOver(playerTwo);
         }
-        else if ((board[0] === 'O') && (board[4] === 'O') && (board[6] === 'O')) {
+        else if ((board[0] === 'O') && (board[3] === 'O') && (board[6] === 'O')) {
             return gameOver(playerTwo);
         }
         else if ((board[0] === 'O') && (board[4] === 'O') && (board[8] === 'O')) {
@@ -235,7 +237,25 @@ const playerWin = () => {
         else if ((board[6] === 'O') && (board[7] === 'O') && (board[8] === 'O')) {
             return gameOver(playerTwo);
         }
-        // else {
-        //     console.log("Tie!")
-        // }
 }
+
+const reset = () => {
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        for (let i = 0; i < 9; i++) {
+            board[i] = "";
+        }
+        select1.innerText = gameBoard.board[0];
+        select2.innerText = gameBoard.board[1];
+        select3.innerText = gameBoard.board[2];
+        select4.innerText = gameBoard.board[3];
+        select5.innerText = gameBoard.board[4];
+        select6.innerText = gameBoard.board[5];
+        select7.innerText = gameBoard.board[6];
+        select8.innerText = gameBoard.board[7];
+        select9.innerText = gameBoard.board[8];
+        winner.innerText = '';
+    })
+}
+
+const resetGame = reset();

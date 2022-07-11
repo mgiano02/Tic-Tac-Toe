@@ -5,14 +5,25 @@ body {
     height: 100vh;
 }
 
+p {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: large;
+}
+
 #container {
     width: 300px;
     height: 300px;
-    /* border: 3px solid grey; */
 }
 
 #row1 {
-    /* border: 2px solid black; */
     display: flex;
     height: 96px;
 }
@@ -44,7 +55,6 @@ body {
 }
 
 #row2 {
-    /* border: 2px solid red; */
     display: flex;
     height: 96px;
 }
@@ -73,7 +83,6 @@ body {
 }
 
 #row3 {
-    /* border: 2px solid blue; */
     display: flex;
     height: 96px;
 }
@@ -102,4 +111,8 @@ body {
     width: 100px;
     text-align: center;
     font-size: 500%;
+}
+
+div {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
