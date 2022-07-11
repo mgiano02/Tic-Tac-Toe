@@ -42,6 +42,7 @@ const select1 = document.querySelector('#slot1');
         move.nextTurn();
         select1.innerText = gameBoard.board[0];
         }
+        playerWin();
     })
     
 const select2 = document.querySelector('#slot2');
@@ -53,6 +54,7 @@ const select2 = document.querySelector('#slot2');
         move.nextTurn();
         select2.innerText = gameBoard.board[1];
         }
+        playerWin();
     })
 
 const select3 = document.querySelector('#slot3');
@@ -64,6 +66,7 @@ const select3 = document.querySelector('#slot3');
         move.nextTurn();
         select3.innerText = gameBoard.board[2];
         }
+        playerWin();
     })
     
 const select4 = document.querySelector('#slot4');
@@ -75,6 +78,7 @@ const select4 = document.querySelector('#slot4');
         move.nextTurn();
         select4.innerText = gameBoard.board[3];
         }
+        playerWin();
     })
     
 const select5 = document.querySelector('#slot5');
@@ -86,6 +90,7 @@ const select5 = document.querySelector('#slot5');
         move.nextTurn();
         select5.innerText = gameBoard.board[4];
         }
+        playerWin();
     })
 
 const select6 = document.querySelector('#slot6');
@@ -97,6 +102,7 @@ const select6 = document.querySelector('#slot6');
         move.nextTurn();
         select6.innerText = gameBoard.board[5];
         }
+        playerWin();
     })
     
 const select7 = document.querySelector('#slot7');
@@ -108,6 +114,7 @@ const select7 = document.querySelector('#slot7');
         move.nextTurn();
         select7.innerText = gameBoard.board[6];
         }
+        playerWin();
     })
 
 const select8 = document.querySelector('#slot8');
@@ -119,6 +126,7 @@ const select8 = document.querySelector('#slot8');
         move.nextTurn();
         select8.innerText = gameBoard.board[7];
         }
+        playerWin();
     })
 
 const select9 = document.querySelector('#slot9');
@@ -130,6 +138,7 @@ const select9 = document.querySelector('#slot9');
         move.nextTurn();
         select9.innerText = gameBoard.board[8];
         }
+        playerWin();
     })
 
 const board = gameBoard.board;
@@ -146,11 +155,6 @@ const Player = (name, mark) => {
 // Players
 const playerOne = Player('Rocket', 'X');
 const playerTwo = Player('Ace', 'O');
-
-// Game ends
-function gameOver(player) {
-    console.log(player.getName() + " wins!");
-}
 
 function gameMove(player) {
     return player.getMark();
@@ -176,3 +180,62 @@ const gameFlow = () => {
 }
 
 const move = gameFlow();
+
+
+function gameOver(player) {
+    console.log(player.getName() + " wins!");
+}
+
+const playerWin = () => {
+        if ((board[0] === 'X') && (board[1] === 'X') && (board[2] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[0] === 'X') && (board[3] === 'X') && (board[6] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[0] === 'X') && (board[4] === 'X') && (board[8] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[1] === 'X') && (board[4] === 'X') && (board[7] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[2] === 'X') && (board[5] === 'X') && (board[8] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[2] === 'X') && (board[4] === 'X') && (board[6] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[3] === 'X') && (board[4] === 'X') && (board[5] === 'X')) {
+            return gameOver(playerOne);
+        }
+        if ((board[6] === 'X') && (board[7] === 'X') && (board[8] === 'X')) {
+            return gameOver(playerOne);
+        }
+        else if ((board[0] === 'O') && (board[1] === 'O') && (board[2] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[0] === 'O') && (board[4] === 'O') && (board[6] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[0] === 'O') && (board[4] === 'O') && (board[8] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[1] === 'O') && (board[4] === 'O') && (board[7] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[2] === 'O') && (board[5] === 'O') && (board[8] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[2] === 'O') && (board[4] === 'O') && (board[6] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[3] === 'O') && (board[4] === 'O') && (board[5] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        else if ((board[6] === 'O') && (board[7] === 'O') && (board[8] === 'O')) {
+            return gameOver(playerTwo);
+        }
+        // else {
+        //     console.log("Tie!")
+        // }
+}
